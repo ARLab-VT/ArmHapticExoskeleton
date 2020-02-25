@@ -1,9 +1,7 @@
 # ArmHapticExoskeleton  
 Processing.js and CCS file  
   
-- 2/19/20 uploaded files to run the GUI  
-  
-<Setting up: Processing>  
+- Setting up: Processing  
 1. To run the Processing.pde file, it would ask to create its own folder.  
 2. Place the files in following path:  
 	receive_Stat.java and SEQUENCE_INDICATOR.java -> same directory with the Processing.pde  
@@ -11,7 +9,7 @@ Processing.js and CCS file
 	create a folder "data" inside the directory created from step 1, and put the medi files in there.
 4. Additionally required library for Processing is minim, to play the audio file
 
-<Setting up: CCS>
+- Setting up: CCS
 1. For the files unzipped, put the files in to the correct folder directory:
 	Motorware library should go into c:\ti\
 2. Create a new workspace at:

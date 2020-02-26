@@ -1,5 +1,4 @@
-## Psuedo code for the Psychophysics tool
-# Key variables to run nested state machines
+# Psuedo code for the Psychophysics tool
 
 import libraries  
 define variables  
@@ -28,11 +27,9 @@ draw
 	**if** (motionATTSequenceIndicator != motionATTSequenceIndicator_prev) **then** play auditory cue  
   
 	**if** (frameCount % 10 == 0) **then** // GUI framerate   
-		**if**(run_cnstSPDTorq = true) &nbsp;&nbsp;&nbsp;&nbsp;// running cnstSPDTorq()  
-			**then**  
-				1: Update GUI for Psychophysics tool for motion  
-				2: **if** (testProcedure = 4) &nbsp;&nbsp;&nbsp;&nbsp;// "minigame" of cnstSPDTorq()  
-					**then**  
-						**switch**(motionATTSequenceIndicator) &nbsp;&nbsp;&nbsp;&nbsp;// cnstSPDTorq() state machine (1-4)  
-							**case** 1  
-								calculate the GUI 
+		**if**(run_cnstSPDTorq = true) **then** // running cnstSPDTorq()  
+			1: Update GUI for Psychophysics tool for motion  
+			2: **if** (testProcedure = 4) **then** // "minigame" of cnstSPDTorq()   
+				**switch**(motionATTSequenceIndicator) &nbsp;&nbsp;&nbsp;&nbsp;// cnstSPDTorq() state machine (1-4)  
+					**case** 1  
+						calculate the GUI 

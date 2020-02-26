@@ -24,10 +24,10 @@ setup
   
 draw  
 {  
-	**if** (motionATTSequenceIndicator != motionATTSequenceIndicator_prev) **then** play auditory cue  
-	**if** (frameCount % 10 == 0) **then** // GUI framerate   
-		**if**(run_cnstSPDTorq = true) **then** // running cnstSPDTorq()  
-			1: Update GUI for Psychophysics tool for motion  
-			2: **if** (testProcedure = 4) **then** // "minigame" of cnstSPDTorq()  
-				**switch**(motionATTSequenceIndicator) // cnstSPDTorq() S.M.
-					**case** 1 calculate the GUI for flx dir & flx torq  
+&nbsp;&nbsp;&nbsp;&nbsp; **if** (motionATTSequenceIndicator != motionATTSequenceIndicator_prev) **then** play auditory cue  
+&nbsp;&nbsp;&nbsp;&nbsp; **if** (frameCount % 10 == 0) **then** // GUI framerate   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if**(run_cnstSPDTorq = true) **then** // running cnstSPDTorq()  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1: Update GUI for Psychophysics tool for motion  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2: **if** (testProcedure = 4) **then** // "minigame" of cnstSPDTorq()  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **switch**(motionATTSequenceIndicator) // cnstSPDTorq() S.M.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**case** 1 calculate the GUI for flx dir & flx torq  

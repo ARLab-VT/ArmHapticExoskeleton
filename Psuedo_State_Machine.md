@@ -5,8 +5,8 @@ define variables
 &nbsp;&nbsp;&nbsp;&nbsp; 1: enablePARTI = 0	&nbsp;&nbsp;// for calling ATT() and cnstSPDTorq()  
 &nbsp;&nbsp;&nbsp;&nbsp; 2: enablePARTII = 0	&nbsp;&nbsp;// for calling trajTracking()   
 &nbsp;&nbsp;&nbsp;&nbsp; 3: testProcedue = 1	&nbsp;&nbsp;// Indicator for the general state machine  
-&nbsp;&nbsp;&nbsp;&nbsp; 4: sequenceIndicator	&nbsp;&nbsp;// Indicator for the ATT() state machine (CALCULATE(0),APPLYandLISTEN(1),IDLE(2))  
-&nbsp;&nbsp;&nbsp;&nbsp; 5: motionATTSequenceIndicator = 0 &nbsp;&nbsp;// Indicator for the cnstSPDTorq() state machine (1-4)  
+&nbsp;&nbsp;&nbsp;&nbsp; 4: sequenceIndicator	&nbsp;&nbsp;// Indicator for the ATT() State Machine (S.M.): (CALCULATE(0),APPLYandLISTEN(1),IDLE(2))  
+&nbsp;&nbsp;&nbsp;&nbsp; 5: motionATTSequenceIndicator = 0 &nbsp;&nbsp;// Indicator for the cnstSPDTorq() S.M. (1-4)  
 &nbsp;&nbsp;&nbsp;&nbsp; 6: ATTcondition = 0	&nbsp;&nbsp;// interal state counter for ATT()  
 &nbsp;&nbsp;&nbsp;&nbsp; 7: ATTMcondition = 0	&nbsp;&nbsp;// interal state counter for cnstSPDTorq()  
 
@@ -29,7 +29,6 @@ draw
 	**if** (frameCount % 10 == 0) **then** // GUI framerate   
 		**if**(run_cnstSPDTorq = true) **then** // running cnstSPDTorq()  
 			1: Update GUI for Psychophysics tool for motion  
-			2: **if** (testProcedure = 4) **then** // "minigame" of cnstSPDTorq()   
-				**switch**(motionATTSequenceIndicator) &nbsp;&nbsp;&nbsp;&nbsp;// cnstSPDTorq() state machine (1-4)  
-					**case** 1  
-						calculate the GUI 
+			2: **if** (testProcedure = 4) **then** // "minigame" of cnstSPDTorq()  
+				**switch**(motionATTSequenceIndicator) // cnstSPDTorq() S.M.
+					**case** 1 calculate the GUI 

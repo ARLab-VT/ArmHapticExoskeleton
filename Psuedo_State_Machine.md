@@ -2,13 +2,13 @@ Psuedo code for the Psychophysics tool
 
 import libraries  
 define variables  
-&nbsp;1: enablePARTI = 0			// for calling ATT() and cnstSPDTorq()  
-&nbsp;2: enablePARTII = 0			// for calling trajTracking()   
-&nbsp;3: testProcedue = 1			// Indicator for the general state machine  
-&nbsp;4: sequenceIndicator			// Indicator for the ATT() state machine (CALCULATE(0),APPLYandLISTEN(1),IDLE(2))  
-&nbsp;5: motionATTSequenceIndicator = 0 	// Indicator for the cnstSPDTorq() state machine (1-4)  
-&nbsp;6: ATTcondition = 0			// interal state counter for ATT()  
-&nbsp;7: ATTMcondition = 0			// interal state counter for cnstSPDTorq()  
+&nbsp;&nbsp;&nbsp;1: enablePARTI = 0			// for calling ATT() and cnstSPDTorq()  
+&nbsp;&nbsp;&nbsp;2: enablePARTII = 0			// for calling trajTracking()   
+&nbsp;&nbsp;&nbsp;3: testProcedue = 1			// Indicator for the general state machine  
+&nbsp;&nbsp;&nbsp;4: sequenceIndicator			// Indicator for the ATT() state machine (CALCULATE(0),APPLYandLISTEN(1),IDLE(2))  
+&nbsp;&nbsp;&nbsp;5: motionATTSequenceIndicator = 0 	// Indicator for the cnstSPDTorq() state machine (1-4)  
+&nbsp;&nbsp;&nbsp;6: ATTcondition = 0			// interal state counter for ATT()  
+&nbsp;&nbsp;&nbsp;7: ATTMcondition = 0			// interal state counter for cnstSPDTorq()  
 
 
 setup

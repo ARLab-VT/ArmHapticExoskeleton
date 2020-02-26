@@ -1,8 +1,7 @@
 Psuedo code for the Psychophysics tool
 
-
-import libraries
-define variables
+import libraries  
+define variables  
 	1: enablePARTI = 0			// for calling ATT() and cnstSPDTorq()
 	2: enablePARTII = 0			// for calling trajTracking() 
 	3: testProcedue = 1			// Indicator for the general state machine

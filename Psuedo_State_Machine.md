@@ -25,10 +25,9 @@ setup
 draw  
 {  
 	**if** (motionATTSequenceIndicator != motionATTSequenceIndicator_prev) **then** play auditory cue  
-  
 	**if** (frameCount % 10 == 0) **then** // GUI framerate   
 		**if**(run_cnstSPDTorq = true) **then** // running cnstSPDTorq()  
 			1: Update GUI for Psychophysics tool for motion  
 			2: **if** (testProcedure = 4) **then** // "minigame" of cnstSPDTorq()  
 				**switch**(motionATTSequenceIndicator) // cnstSPDTorq() S.M.
-					**case** 1 calculate the GUI 
+					**case** 1 calculate the GUI for flx dir & flx torq  

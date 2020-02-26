@@ -9,7 +9,8 @@ define variables
 &nbsp;&nbsp;&nbsp;&nbsp; 5: motionATTSequenceIndicator = 0 &nbsp;&nbsp;// Indicator for the cnstSPDTorq() S.M. (1-4)  
 &nbsp;&nbsp;&nbsp;&nbsp; 6: ATTcondition = 0	&nbsp;&nbsp;// interal state counter for ATT()  
 &nbsp;&nbsp;&nbsp;&nbsp; 7: ATTMcondition = 0	&nbsp;&nbsp;// interal state counter for cnstSPDTorq()  
-
+&nbsp;&nbsp;&nbsp;&nbsp; 8: beginTest = 0 	&nbsp;&nbsp;// Start Cue for each sequence of the experiment, triggered by the experimenter  
+&nbsp;&nbsp;&nbsp;&nbsp; 9: enable_Recording = 0&nbsp;&nbsp;// boolean for recording data  
 
 setup  
 {  
@@ -47,6 +48,12 @@ draw
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FSR sensor readings to GUI
     
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (enablePARTI = 1) 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (testProcedure is 1 or 2 or 3) **then** run_ATT = true;  run_cnstSPDTorq = false;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **elseif** (testProcedure is 4 or 5) **then** run_ATT = false;   run_cnstSPDTorq = true;     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (enablePARTI = 1)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (beginTest = 1)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (testProcedure is 1 or 2 or 3) **then** run_ATT = true;  run_cnstSPDTorq = false;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **elseif** (testProcedure is 4 or 5) **then** run_ATT = false;   run_cnstSPDTorq = true;     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **elseif** (enablePARTI = 2)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Change the communication protocol with CCS //send an ASCII code  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **else**  // IDLE or Debugging  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (beginTest = 1) **then** enable_Recording = 1;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **else** (beginTest = 1) **then** run_ATT = false; run_cnstSPDTorq = false;  

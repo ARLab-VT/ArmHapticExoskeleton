@@ -1,6 +1,7 @@
 # Psuedo code for the Psychophysics tool
 
 import libraries  
+  
 define variables  
 &nbsp;&nbsp;&nbsp;&nbsp; 1: enablePARTI = 0	&nbsp;&nbsp;// for calling ATT() and cnstSPDTorq()  
 &nbsp;&nbsp;&nbsp;&nbsp; 2: enablePARTII = 0	&nbsp;&nbsp;// for calling trajTracking()   
@@ -46,9 +47,7 @@ draw
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (gameScore>=100) **then** testProcedure: 1->2   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **else** // IDLE or Debugging  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1: Update GUI for debugging variables  
-  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FSR sensor readings to GUI
-    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (enablePARTI = 1)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (beginTest = 1)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (testProcedure is 1 or 2 or 3) **then** run_ATT = true;  run_cnstSPDTorq = false;  
@@ -58,3 +57,11 @@ draw
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **else**  // IDLE or Debugging  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (beginTest = 1) **then** enable_Recording = 1;  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **else** (beginTest = 1) **then** run_ATT = false; run_cnstSPDTorq = false;  
+  
+&nbsp;&nbsp;&nbsp;&nbsp; Termination test for run_cnstSPDTorq()  
+  
+&nbsp;&nbsp;&nbsp;&nbsp; Multi-threading run_ATT() and run_cnstSPDTorq()  
+  
+&nbsp;&nbsp;&nbsp;&nbsp; Termination test for run_cnstSPDTorq()  
+  
+&nbsp;&nbsp;&nbsp;&nbsp; Main Counter Update  

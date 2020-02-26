@@ -10,8 +10,10 @@ define variables
 &nbsp;&nbsp;&nbsp;&nbsp; 5: motionATTSequenceIndicator = 0 &nbsp;&nbsp;// Indicator for the cnstSPDTorq() S.M. (1-4)  
 &nbsp;&nbsp;&nbsp;&nbsp; 6: ATTcondition = 0	&nbsp;&nbsp;// interal state counter for ATT()  
 &nbsp;&nbsp;&nbsp;&nbsp; 7: ATTMcondition = 0	&nbsp;&nbsp;// interal state counter for cnstSPDTorq()  
-&nbsp;&nbsp;&nbsp;&nbsp; 8: beginTest = 0 	&nbsp;&nbsp;// Start Cue for each sequence of the experiment, triggered by the experimenter  
-&nbsp;&nbsp;&nbsp;&nbsp; 9: enable_Recording = 0&nbsp;&nbsp;// Toggling for data recording 
+&nbsp;&nbsp;&nbsp;&nbsp; 8: run_ATT = false	&nbsp;&nbsp;// Toggling for ATT()  
+&nbsp;&nbsp;&nbsp;&nbsp; 9: run_cnstSPDTorq  = false&nbsp;&nbsp;// Toggling for cnstSPDTorq()  
+&nbsp;&nbsp;&nbsp;&nbsp; 10: beginTest = 0 	&nbsp;&nbsp;// Start Cue for each sequence of the experiment, triggered by the experimenter  
+&nbsp;&nbsp;&nbsp;&nbsp; 11: enable_Recording = 0&nbsp;&nbsp;// Toggling for data recording  
 
 setup  
 {  
@@ -65,3 +67,4 @@ draw
 &nbsp;&nbsp;&nbsp;&nbsp; Termination test for run_cnstSPDTorq()  
   
 &nbsp;&nbsp;&nbsp;&nbsp; Main Counter Update  
+}  

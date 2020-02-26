@@ -28,12 +28,12 @@ setup
   
 draw  
 {  
-&nbsp;&nbsp;&nbsp;&nbsp; **if** (motionATTSequenceIndicator != motionATTSequenceIndicator_prev) **then** play auditory cue  
+&nbsp;&nbsp;&nbsp;&nbsp; 1: **if** (motionATTSequenceIndicator != motionATTSequenceIndicator_prev) **then** play auditory cue  
   
-&nbsp;&nbsp;&nbsp;&nbsp; **if** (frameCount % 10 == 0) **then** // Graphical setting   
+&nbsp;&nbsp;&nbsp;&nbsp; 2: **if** (frameCount % 10 == 0) **then** // Graphical setting   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if**(run_cnstSPDTorq = true) **then** // running cnstSPDTorq() GUI  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1: Update GUI for Psychophysics tool for motion  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2: **if** (testProcedure = 4) **then** // "mini-game" of cnstSPDTorq()  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update GUI for Psychophysics tool for motion  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (testProcedure = 4) **then** // "mini-game" of cnstSPDTorq()  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **switch**(motionATTSequenceIndicator) // cnstSPDTorq() S.M.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **case 1** calculate the GUI for flx. dir & flx. torq  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **case 2** calculate the GUI for flx. dir & ext. torq  
@@ -42,13 +42,13 @@ draw
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Print correct answers to minigame GUI  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (gameScore>=100) **then** testProcedure: 4->5   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **elseif**(run_ATT = true) **then** // running run_ATT() GUI  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1: Update GUI for Psychophysics tool for static pose  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2: **if** (testProcedure = 1) **then** // "minigame" of run_ATT()  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update GUI for Psychophysics tool for static pose  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (testProcedure = 1) **then** // "minigame" of run_ATT()  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update mini-game scores **during** random interval  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Print correct answers to minigame GUI  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (gameScore>=100) **then** testProcedure: 1->2   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **else** // IDLE or Debugging  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1: Update GUI for debugging variables  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update GUI for debugging variables  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FSR sensor readings to GUI
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (enablePARTI = 1)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (beginTest = 1)  
@@ -60,11 +60,16 @@ draw
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if** (beginTest = 1) **then** enable_Recording = 1;  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **else** (beginTest = 1) **then** run_ATT = false; run_cnstSPDTorq = false;  
   
-&nbsp;&nbsp;&nbsp;&nbsp; Termination test for run_cnstSPDTorq()  
+&nbsp;&nbsp;&nbsp;&nbsp; 3: Termination test for run_cnstSPDTorq()  
   
-&nbsp;&nbsp;&nbsp;&nbsp; Multi-threading run_ATT() and run_cnstSPDTorq()  
+&nbsp;&nbsp;&nbsp;&nbsp; 4: Multi-threading run_ATT() and run_cnstSPDTorq()  
   
-&nbsp;&nbsp;&nbsp;&nbsp; Termination test for run_cnstSPDTorq()  
+&nbsp;&nbsp;&nbsp;&nbsp; 5: Termination test for run_cnstSPDTorq()  
   
-&nbsp;&nbsp;&nbsp;&nbsp; Main Counter Update  
+&nbsp;&nbsp;&nbsp;&nbsp; 6: Main Counter Update  
 }  
+  
+cnstSPDTorq()  
+{  
+&nbsp;&nbsp;&nbsp;&nbsp; **if** (run_cnstSPDTorq) **then**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

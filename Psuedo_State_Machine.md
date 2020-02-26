@@ -10,7 +10,7 @@ define variables
 &nbsp;&nbsp;&nbsp;&nbsp; 6: ATTcondition = 0	&nbsp;&nbsp;// interal state counter for ATT()  
 &nbsp;&nbsp;&nbsp;&nbsp; 7: ATTMcondition = 0	&nbsp;&nbsp;// interal state counter for cnstSPDTorq()  
 &nbsp;&nbsp;&nbsp;&nbsp; 8: beginTest = 0 	&nbsp;&nbsp;// Start Cue for each sequence of the experiment, triggered by the experimenter  
-&nbsp;&nbsp;&nbsp;&nbsp; 9: enable_Recording = 0&nbsp;&nbsp;// boolean for recording data  
+&nbsp;&nbsp;&nbsp;&nbsp; 9: enable_Recording = 0&nbsp;&nbsp;// Toggling for data recording 
 
 setup  
 {  
@@ -26,7 +26,8 @@ setup
 draw  
 {  
 &nbsp;&nbsp;&nbsp;&nbsp; **if** (motionATTSequenceIndicator != motionATTSequenceIndicator_prev) **then** play auditory cue  
-&nbsp;&nbsp;&nbsp;&nbsp; **if** (frameCount % 10 == 0) **then** // GUI framerate   
+  
+&nbsp;&nbsp;&nbsp;&nbsp; **if** (frameCount % 10 == 0) **then** // Graphical setting   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **if**(run_cnstSPDTorq = true) **then** // running cnstSPDTorq() GUI  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1: Update GUI for Psychophysics tool for motion  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2: **if** (testProcedure = 4) **then** // "mini-game" of cnstSPDTorq()  

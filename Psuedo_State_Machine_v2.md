@@ -1,17 +1,17 @@
 # Psuedo code for the Psychophysics tool  
 
 ## version change:  
- - This code proposes arm's rhythmic motion-based psychophysics test  
- - We want to see converged torque values in both flexion and extension, according to three speed levels  
- - No arm dynamics simulated in GUI  
- - Instead, current position determined based on the encoder feedback  
- - Instantaneous arm motion is determined based on the yielded velocity(filtered)  
- - Auditory cue direct user's motion sequence  
- - GUI indicates the speed of the current arm motion, via changing color
- - User response should be still three options: flexion; extension; no answer
- - Condition for applying torque:  
-&nbsp;&nbsp;&nbsp;&nbsp; the average arm speed, which is updated in real time per motion sequence, becomes faster than the set threshold  
-&nbsp;&nbsp;&nbsp;&nbsp; Once torque starts being applied, no directional change of the torque within the movement cycle  
+ - This code proposes arm's rhythmic motion-based psychophysics test.  
+ - We want to see converged torque values(d.v.) in both flexion and extension, according to three speed levels (i.v.).  
+ - No speed indicator in GUI.  
+ - No arm dynamics simulated in GUI. Instead, current position determined based on the encoder feedback.  
+ - Instantaneous direction for the arm motion is determined based on the yielded velocity(filtered).  
+ - Auditory cue direct user's motion sequence.  
+ - User response should be still three options: flexion; extension; no answer.
+ - Not care about averaged arm speed; torque applies regardless of the current arm position  
+ - Therefore, cnstSPDTorq() is now the same as ATT() except followings:  
+&nbsp;&nbsp;&nbsp;&nbsp; Not randomized time interval.  
+&nbsp;&nbsp;&nbsp;&nbsp; Rhythmic auditory cue is running separately on the backgrounds while ISM converges.   
 
 import libraries  
 
